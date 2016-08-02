@@ -1,0 +1,161 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.viet.yardsale.SignUpActivity"
+    android:background="@drawable/activities_background">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner_layout_style">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Information"
+            android:id="@+id/textView10"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:textColor="#ff0a0687" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/notice"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffff2b2d"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/space70" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner_layout_style">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/username"
+                android:hint="User Name"
+                android:background="@drawable/edit_text_style"
+                android:lines="1"
+                android:maxLength="20"
+                android:layout_gravity="center_vertical"
+                android:maxLines="1" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Check"
+                android:id="@+id/checkBtt"
+                android:onClick="checkUserName"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/checkmsg"
+                android:layout_toEndOf="@+id/username"
+                android:layout_alignBottom="@+id/username"
+                android:layout_alignParentTop="true"
+                android:textIsSelectable="false"
+                android:gravity="center|center_vertical"
+                android:textColor="#ff1618ff" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space19" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/password"
+            android:layout_below="@+id/username"
+            android:layout_centerHorizontal="true"
+            android:hint="Password"
+            android:background="@drawable/edit_text_style"
+            android:maxLength="15"
+            android:lines="1"
+            android:maxLines="1" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space20" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/cpassword"
+            android:layout_below="@+id/password"
+            android:layout_centerHorizontal="true"
+            android:hint="Confirm Password"
+            android:background="@drawable/edit_text_style"
+            android:maxLength="15"
+            android:lines="1"
+            android:maxLines="1" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space21" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/email"
+            android:layout_below="@+id/cpassword"
+            android:layout_centerHorizontal="true"
+            android:hint="Email"
+            android:background="@drawable/edit_text_style"
+            android:maxLines="1"
+            android:maxLength="100" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space22" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:id="@+id/submitBtt"
+            android:onClick="signUp"
+            android:layout_below="@+id/email"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/space11" />
+
+
+</LinearLayout>

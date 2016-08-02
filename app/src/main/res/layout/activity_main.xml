@@ -1,0 +1,426 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity"
+    android:background="#ADD8E6"
+    android:visibility="visible">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/bLoginLayout"
+        android:visibility="invisible"
+        android:background="@drawable/activities_background">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style"
+            android:visibility="invisible"
+            android:id="@+id/signin_err_layout">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/err"
+                android:layout_below="@+id/introduce"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffff171e"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space9" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User Name"
+                android:id="@+id/textView7"
+                android:textSize="18dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/userName"
+                android:maxLength="20"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/edit_text_style"
+                android:layout_below="@+id/introduce"
+                android:maxLines="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:id="@+id/textView8"
+                android:textSize="18dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/password"
+                android:layout_below="@+id/userName"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:maxLength="15"
+                android:background="@drawable/edit_text_style"
+                android:maxLines="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forget Password?"
+                android:id="@+id/forgetPassword"
+                android:layout_gravity="right"
+                android:textStyle="bold|italic"
+                android:onClick="openForgetPWActivity"
+                android:clickable="true"
+                android:textColor="#ff0a0687" />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:id="@+id/space35" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sign In"
+                android:id="@+id/logInBtt"
+                android:onClick="logIn"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sign Up"
+                android:id="@+id/signUpBtt"
+                android:onClick="signUp"
+                android:layout_below="@+id/logInBtt"
+                android:layout_alignLeft="@+id/logInBtt"
+                android:layout_alignStart="@+id/logInBtt"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:id="@+id/adLayout"
+            android:visibility="gone">
+
+            <com.google.android.gms.ads.AdView android:id="@+id/loginAd"
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ads:adUnitId="ca-app-pub-1396043502833166/6027855732"
+                ads:adSize="BANNER"
+                android:visibility="visible" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/aLoginLayout"
+        android:background="@drawable/activities_background"
+        android:visibility="invisible">
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space10" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style"
+            android:visibility="invisible"
+            android:id="@+id/aLoginErrorLayout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/notice"
+                android:textColor="#ffff4238"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:visibility="visible"
+                android:text="Please check internet connection" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space2" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Post A Yard Sale"
+                android:id="@+id/needBtt"
+                android:onClick="postYardSale"
+                android:layout_above="@+id/giveBtt"
+                android:layout_centerHorizontal="true" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:id="@+id/space3" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Search For Yard Sales"
+                android:id="@+id/giveBtt"
+                android:onClick="searchYardSales" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:id="@+id/space4" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Manage Yard Sale"
+                android:id="@+id/infoBtt"
+                android:onClick="manageYardSale" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:id="@+id/space5" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style" >
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit Account Information"
+                android:id="@+id/editAccBtt"
+                android:onClick="openEditAccountInfoActivity"
+                android:layout_below="@+id/infoBtt"
+                android:layout_alignLeft="@+id/infoBtt"
+                android:layout_alignStart="@+id/infoBtt"
+                android:layout_alignRight="@+id/infoBtt"
+                android:layout_alignEnd="@+id/infoBtt" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:id="@+id/space43" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sign Out"
+                android:id="@+id/signout"
+                android:onClick="signOut"
+                android:layout_below="@+id/infoBtt"
+                android:layout_alignLeft="@+id/infoBtt"
+                android:layout_alignStart="@+id/infoBtt"
+                android:layout_alignRight="@+id/infoBtt"
+                android:layout_alignEnd="@+id/infoBtt" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:id="@+id/updateAppLayout"
+        android:background="@drawable/activities_background">
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space68" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Please update to latest version"
+                android:id="@+id/textView5"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_vertical"
+                android:textColor="#ffff2b1d"
+                android:gravity="center_horizontal" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space6" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Update"
+                android:id="@+id/button2"
+                android:layout_below="@+id/textView5"
+                android:layout_centerHorizontal="true"
+                android:onClick="bringUsertoUpdate" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/checkInternetLayout"
+        android:visibility="invisible"
+        android:background="@drawable/activities_background">
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space63" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Please check internet connection!"
+                android:id="@+id/textView6"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffff2b24"
+                android:gravity="center_horizontal" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space7" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Try Again"
+                android:id="@+id/tryAgainBtt"
+                android:layout_below="@+id/textView6"
+                android:layout_centerHorizontal="true"
+                android:onClick="tryAgainBtt" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space8" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Exit"
+                android:id="@+id/closeBtt"
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/tryAgainBtt"
+                android:layout_alignStart="@+id/tryAgainBtt"
+                android:layout_alignRight="@+id/tryAgainBtt"
+                android:layout_alignEnd="@+id/tryAgainBtt"
+                android:onClick="closeApp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

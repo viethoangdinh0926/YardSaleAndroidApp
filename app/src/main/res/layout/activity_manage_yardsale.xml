@@ -1,0 +1,256 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.viet.yardsale.ManageYardSaleActivity"
+    android:background="#ADD8E6">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/bClearLayout"
+        android:visibility="invisible"
+        android:background="@drawable/activities_background">
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space57" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/notice"
+                android:gravity="center_horizontal"
+                android:text="Would you like to remove your Yard Sale from system?" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space53" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/errLayout"
+            android:visibility="gone"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/errMessage"
+                android:gravity="center_horizontal"
+                android:textColor="#ffff2b1d"
+                android:text="Please check internet connection and try again." />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space54" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OK"
+                android:id="@+id/removeBtt"
+                android:onClick="clearUserYardSale" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:id="@+id/adLayout"
+            android:visibility="gone">
+
+            <com.google.android.gms.ads.AdView android:id="@+id/loginAd"
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ads:adUnitId="ca-app-pub-1396043502833166/6027855732"
+                ads:adSize="BANNER"
+                android:visibility="visible" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/aClearLayout"
+        android:visibility="invisible"
+        android:background="@drawable/activities_background">
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space55" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/clearedNotice"
+                android:gravity="center_horizontal"
+                android:text="Your Yard Sale has been cleared. Get back to main menu?" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space56" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OK"
+                android:id="@+id/backMainMenuBtt"
+                android:onClick="returnToMainActivity" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/noYardSaleLayout"
+        android:visibility="invisible"
+        android:background="@drawable/activities_background">
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space58" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You have no Yard Sale. Get back main menu?"
+                android:id="@+id/textView22"
+                android:gravity="center_horizontal" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space59" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Return To Main Menu"
+                android:id="@+id/noYardSaleBtt"
+                android:onClick="returnToMainActivity" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainErrLayout"
+        android:visibility="invisible"
+        android:background="@drawable/activities_background">
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space60" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Fail to connect to the server. Please check internet connection."
+                android:id="@+id/textView23"
+                android:textColor="#ffff2b1d"
+                android:gravity="center_horizontal" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space61" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Try Again"
+                android:id="@+id/tryAgainBtt"
+                android:onClick="renewMe" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space62" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_layout_style">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Return To Main Menu"
+                android:id="@+id/returnBtt"
+                android:onClick="returnToMainActivity" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

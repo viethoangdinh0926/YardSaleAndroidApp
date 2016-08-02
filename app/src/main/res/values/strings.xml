@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Yard Sale</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_sign_up">Yard Sale</string>
+    <string name="title_activity_need_adrive">Yard Sale</string>
+    <string name="title_activity_give_adrive">Yard Sale</string>
+
+    <string-array name="available_range">
+        <item>1 mile</item>
+        <item>2 miles</item>
+        <item>3 miles</item>
+        <item>4 miles</item>
+        <item>5 miles</item>
+        <item>6 miles</item>
+        <item>7 miles</item>
+        <item>8 miles</item>
+        <item>9 miles</item>
+        <item>10 miles</item>
+    </string-array>
+
+    <string-array name="open_hours">
+        <item>7.AM</item>
+        <item>8.AM</item>
+        <item>9.AM</item>
+        <item>10.AM</item>
+        <item>11.AM</item>
+    </string-array>
+
+    <string-array name="close_hours">
+        <item>1.PM</item>
+        <item>2.PM</item>
+        <item>3.PM</item>
+        <item>4.PM</item>
+        <item>5.PM</item>
+        <item>6.PM</item>
+    </string-array>
+
+    <string name="title_activity_successful_post">Yard Sale</string>
+    <string name="title_activity_products">yard Sale</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_activity_yard_sale_preview">Yard Sale</string>
+    <string name="title_activity_confirm_signup">Yard Sale</string>
+    <string name="title_activity_forget_password">Yard Sale</string>
+    <string name="title_activity_confirm_pwsent">Yard Sale</string>
+    <string name="title_activity_edit_account">Yard Sale</string>
+    <string name="title_activity_confirm_password_email_change">Yard Sale</string>
+    <string name="title_activity_manage_yard_sale">Yard Sale</string>
+</resources>

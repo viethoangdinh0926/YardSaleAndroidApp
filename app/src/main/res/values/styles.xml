@@ -1,0 +1,54 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@android:style/Theme.Holo.Light">
+        <!-- Customize your theme here. -->
+        <item name="android:textViewStyle">@style/textView</item>
+        <item name="android:buttonStyle">@style/button</item>
+        <item name="android:actionBarStyle">@style/actionBar</item>
+        <item name="android:spinnerStyle">@style/spinner</item>
+    </style>
+
+    <style name="textView" parent="android:Widget.TextView">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+
+    <style name="button" parent="android:Widget.Holo.Button">
+        <item name="android:layout_width" >fill_parent</item>
+        <item name="android:layout_height" >wrap_content</item>
+        <item name="android:textColor" >#ffffff</item>
+        <item name="android:gravity" >center</item>
+        <item name="android:layout_margin" >3dp</item>
+        <item name="android:textSize" >18dp</item>
+        <item name="android:textStyle" >bold</item>
+        <item name="android:shadowColor" >#000000</item>
+        <item name="android:shadowDx" >2</item>
+        <item name="android:shadowDy" >2</item>
+        <item name="android:shadowRadius" >2</item>
+        <item name="android:background" >@drawable/button_style</item>
+    </style>
+
+    <style name="spinner" parent="android:Widget.Holo.Light.Spinner">
+        <item name="android:paddingLeft">1dp</item>
+        <item name="android:showDividers">none</item>
+        <item name="android:dividerHeight">0dp</item>
+        <item name="android:dropDownHeight">70dp</item>
+
+        <item name="android:scrollbarAlwaysDrawVerticalTrack">true</item>
+        <item name="android:dropDownSelector">@android:color/white</item>
+    </style>
+
+    <style name="actionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">#ffaf03</item>
+        <item name="android:titleTextStyle">@style/actionBar.TitleTextStyle</item>
+
+    </style>
+
+    <style name="actionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+</resources>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.viet.yardsale" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <!--
+ The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but are recommended.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" > <!-- preventing screen rotation -->
+        <activity
+            android:name="com.viet.yardsale.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name="com.viet.yardsale.MapsActivity"
+            android:label="@string/title_activity_maps" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.viet.yardsale.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.viet.yardsale.SignUpActivity"
+            android:label="@string/title_activity_sign_up"
+            android:launchMode="singleTop"
+            android:parentActivityName="com.viet.yardsale.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.viet.yardsale.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.viet.yardsale.post_yardsale_operations.PostYardSaleMainActivity"
+            android:label="@string/title_activity_need_adrive"
+            android:parentActivityName="com.viet.yardsale.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.viet.yardsale.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.viet.yardsale.search_yardsale_operations.SearchYardSalesActivity"
+            android:label="@string/title_activity_give_adrive"
+            android:parentActivityName="com.viet.yardsale.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.viet.yardsale.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.viet.yardsale.post_yardsale_operations.SuccessfulPostBasicYardSaleActivity"
+            android:label="@string/title_activity_successful_post"
+            android:parentActivityName="com.viet.yardsale.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.viet.yardsale.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.viet.yardsale.post_yardsale_operations.AddingMoreYardSaleDetailActivity"
+            android:label="@string/title_activity_products"
+            android:parentActivityName="com.viet.yardsale.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.viet.yardsale.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.viet.yardsale.search_yardsale_operations.YardSalePreviewActivity"
+            android:label="@string/title_activity_yard_sale_preview"
+            android:parentActivityName="com.viet.yardsale.MapsActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.viet.yardsale.MapsActivity" />
+        </activity>
+        <activity
+            android:name="com.viet.yardsale.ConfirmSignupActivity"
+            android:label="@string/title_activity_confirm_signup"
+            android:parentActivityName="com.viet.yardsale.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.viet.yardsale.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.viet.yardsale.ForgetPasswordActivity"
+            android:label="@string/title_activity_forget_password"
+            android:parentActivityName="com.viet.yardsale.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.viet.yardsale.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.viet.yardsale.ConfirmPWSentActivity"
+            android:label="@string/title_activity_confirm_pwsent"
+            android:parentActivityName="com.viet.yardsale.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.viet.yardsale.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.viet.yardsale.EditAccountActivity"
+            android:label="@string/title_activity_edit_account"
+            android:parentActivityName="com.viet.yardsale.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.viet.yardsale.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.viet.yardsale.ConfirmPasswordEmailChangeActivity"
+            android:label="@string/title_activity_confirm_password_email_change"
+            android:parentActivityName="com.viet.yardsale.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.viet.yardsale.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.viet.yardsale.ManageYardSaleActivity"
+            android:label="@string/title_activity_manage_yard_sale"
+            android:parentActivityName="com.viet.yardsale.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.viet.yardsale.MainActivity" />
+        </activity>
+
+        <activity android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+
+    </application>
+
+</manifest>
