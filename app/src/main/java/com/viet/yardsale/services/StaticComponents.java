@@ -54,6 +54,6 @@ public class StaticComponents {
     //show or hide ads
     public static boolean showAds;
 
-    //database address
+    //host address where php codes located
     public static String dbAdress = "http://massbaybook.hostei.com/com.viet.yardsale.com.viet.yardsale.android_php_yardsale/";
 }
