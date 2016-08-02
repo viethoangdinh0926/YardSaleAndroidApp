@@ -1,9 +1,10 @@
-package com.viet.yardsale.android_php.yardsale;
+package com.viet.yardsale.android_php_yardsale;
 
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.view.View;
 
+import com.viet.yardsale.MainActivity;
 import com.viet.yardsale.R;
 import com.viet.yardsale.services.StaticComponents;
 
@@ -17,10 +18,10 @@ import java.net.URLEncoder;
 /**
  * Created by Viet on 6/10/2015.
  */
-public class ClearUserYardSale extends AsyncTask {
+public class CheckAppVersion extends AsyncTask {
     private Activity activity;
 
-    public ClearUserYardSale(Activity activity){
+    public CheckAppVersion(Activity activity){
         this.activity = activity;
     }
 
@@ -31,10 +32,10 @@ public class ClearUserYardSale extends AsyncTask {
             String data = "";
             String link = "";
 
-            String username = (String) params[0];
+            String version = (String) params[0];
 
-            link = StaticComponents.dbAdress + "clearUserYardSale.php";
-            data += "&" + URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8");
+            link = StaticComponents.dbAdress + "checkVersion.php";
+            data += "&" + URLEncoder.encode("version", "UTF-8") + "=" + URLEncoder.encode(version, "UTF-8");
 
             URL url = new URL(link);
             URLConnection conn = url.openConnection();
@@ -64,15 +65,21 @@ public class ClearUserYardSale extends AsyncTask {
     }
 
     @Override
-    protected void onPostExecute(Object result){
-        StaticComponents.unfreezeActivity(activity); //release the activity after finish processing
-
-        if(((String)result).equals("done")){
-            activity.findViewById(R.id.aClearLayout).setVisibility(View.VISIBLE);
-            activity.findViewById(R.id.bClearLayout).setVisibility(View.INVISIBLE);
-        }
-        else {
-            activity.findViewById(R.id.errLayout).setVisibility(View.VISIBLE);
+    protected void onPostExecute(Object result) {
+        StaticComponents.alreadyCheckAppVersion = true;
+        StaticComponents.unfreezeActivity(activity); //finish processing
+        if (((String) result).equals("0")) {
+            StaticComponents.showAds = false;
+            ((MainActivity) activity).findViewById(R.id.bLoginLayout).setVisibility(View.VISIBLE);
+        } else if (((String) result).equals("1")) {
+            StaticComponents.showAds = true;
+            ((MainActivity)activity).findViewById(R.id.adLayout).setVisibility(View.VISIBLE);
+            ((MainActivity) activity).findViewById(R.id.bLoginLayout).setVisibility(View.VISIBLE);
+        } else if (((String) result).equals("not ok")) {
+            ((MainActivity) activity).findViewById(R.id.updateAppLayout).setVisibility(View.VISIBLE);
+        } else {//lose internet connection
+            ((MainActivity) activity).findViewById(R.id.checkInternetLayout).setVisibility(View.VISIBLE);
+            StaticComponents.alreadyCheckAppVersion = false;
         }
     }
 }

@@ -10,9 +10,9 @@ import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.viet.yardsale.android_php.yardsale.ChangeUserEmail;
-import com.viet.yardsale.android_php.yardsale.ChangeUserPassword;
-import com.viet.yardsale.android_php.yardsale.GetCurrentUserEmail;
+import com.viet.yardsale.android_php_yardsale.ChangeUserEmail;
+import com.viet.yardsale.android_php_yardsale.ChangeUserPassword;
+import com.viet.yardsale.android_php_yardsale.GetCurrentUserEmail;
 import com.viet.yardsale.services.StaticComponents;
 
 

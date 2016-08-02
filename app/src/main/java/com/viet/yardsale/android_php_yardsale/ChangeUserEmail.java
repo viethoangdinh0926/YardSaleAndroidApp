@@ -1,12 +1,12 @@
-package com.viet.yardsale.android_php.yardsale;
+package com.viet.yardsale.android_php_yardsale;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.TextView;
 
-import com.viet.yardsale.ConfirmPWSentActivity;
-import com.viet.yardsale.ForgetPasswordActivity;
+import com.viet.yardsale.ConfirmPasswordEmailChangeActivity;
+import com.viet.yardsale.EditAccountActivity;
 import com.viet.yardsale.R;
 import com.viet.yardsale.services.StaticComponents;
 
@@ -20,12 +20,11 @@ import java.net.URLEncoder;
 /**
  * Created by Viet on 6/22/2015.
  */
-public class GenerateUserTempPassword extends AsyncTask {
+public class ChangeUserEmail extends AsyncTask {
     private Activity activity;
-    private String tempEmail;
+    public static String user_email_for_sending_pw_to;
 
-
-    public GenerateUserTempPassword(Activity activity){
+    public ChangeUserEmail(Activity activity){
         this.activity = activity;
     }
 
@@ -37,12 +36,12 @@ public class GenerateUserTempPassword extends AsyncTask {
             String link = "";
 
             String username = (String) params[0];
-            String regEmail = (String) params[1];
-            tempEmail = regEmail;
+            String newEmail = (String) params[1];
 
-            link = StaticComponents.dbAdress + "generateTempPassword.php";
+            link = StaticComponents.dbAdress + "changeUserEmail.php";
             data += "&" + URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8");
-            data += "&" + URLEncoder.encode("regEmail", "UTF-8") + "=" + URLEncoder.encode(regEmail, "UTF-8");
+            data += "&" + URLEncoder.encode("newEmail", "UTF-8") + "=" + URLEncoder.encode(newEmail, "UTF-8");
+
 
             URL url = new URL(link);
             URLConnection conn = url.openConnection();
@@ -67,7 +66,7 @@ public class GenerateUserTempPassword extends AsyncTask {
             return sb.toString();
         } catch (Exception e) {
             //return new String("Exception: " + e.getMessage());
-            return "Please check internet connection";
+            return "Please check internet connection.";
         }
     }
 
@@ -76,13 +75,13 @@ public class GenerateUserTempPassword extends AsyncTask {
         StaticComponents.unfreezeActivity(activity);//release the activity after finish processing
         String tempResult = (String)result;
         if(tempResult.equals("done")){
-            StaticComponents.signup_or_forget_password_user_email = tempEmail;
-            Intent intent = new Intent(activity, ConfirmPWSentActivity.class);
+            StaticComponents.password_false_email_true = true;
+            Intent intent = new Intent(activity, ConfirmPasswordEmailChangeActivity.class);
             activity.startActivity(intent);
             activity.finish();
         }
         else {
-            ((TextView)((ForgetPasswordActivity) activity).findViewById(R.id.errMessage)).setText((String) result);
+            ((TextView)((EditAccountActivity) activity).findViewById(R.id.errMessage)).setText((String) result);
         }
     }
 }

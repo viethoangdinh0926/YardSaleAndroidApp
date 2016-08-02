@@ -14,8 +14,8 @@ import android.widget.EditText;
 
 import com.viet.yardsale.post_yardsale_operations.PostYardSaleMainActivity;
 import com.viet.yardsale.search_yardsale_operations.SearchYardSalesActivity;
-import com.viet.yardsale.android_php.yardsale.CheckAppVersion;
-import com.viet.yardsale.android_php.yardsale.SignupLoginOperations;
+import com.viet.yardsale.android_php_yardsale.CheckAppVersion;
+import com.viet.yardsale.android_php_yardsale.SignupLoginOperations;
 import com.viet.yardsale.services.StaticComponents;
 import com.viet.yardsale.services.UserPhoneServices;
 
@@ -215,7 +215,7 @@ public class MainActivity extends Activity{
     }
 
     public void bringUsertoUpdate(View view){
-        Intent intent = new Intent(Intent.ACTION_VIEW , Uri.parse("market://details?id=com.viet.yardsale"));
+        Intent intent = new Intent(Intent.ACTION_VIEW , Uri.parse("market://details?id=com.viet.com.viet.yardsale.com.viet.yardsale.android_php_yardsale"));
         startActivity(intent);
     }
 

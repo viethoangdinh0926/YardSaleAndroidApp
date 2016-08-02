@@ -1,4 +1,4 @@
-package com.viet.yardsale.android_php.yardsale;
+package com.viet.yardsale.android_php_yardsale;
 
 import android.app.Activity;
 import android.graphics.Bitmap;

@@ -1,8 +1,7 @@
-package com.viet.yardsale.android_php.yardsale;
+package com.viet.yardsale.android_php_yardsale;
 
 import android.app.Activity;
 import android.os.AsyncTask;
-import android.view.View;
 import android.widget.TextView;
 
 import com.viet.yardsale.R;
@@ -17,12 +16,12 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 
 /**
- * Created by Viet on 6/25/2015.
+ * Created by Viet on 6/23/2015.
  */
-public class ReportAYardSale extends AsyncTask {
+public class GetYardSaleMainDescription extends AsyncTask {
     private Activity activity;
 
-    public ReportAYardSale(Activity activity){
+    public GetYardSaleMainDescription(Activity activity) {
         this.activity = activity;
     }
 
@@ -33,13 +32,10 @@ public class ReportAYardSale extends AsyncTask {
             String data = "";
             String link = "";
 
-            String reporter = (String) params[0];
-            String reportedUser = (String) params[1];
+            String username = (String) params[0];
 
-            link = StaticComponents.dbAdress + "reportAYardSale.php";
-            data += "&" + URLEncoder.encode("reporter", "UTF-8") + "=" + URLEncoder.encode(reporter, "UTF-8");
-            data += "&" + URLEncoder.encode("reportedUser", "UTF-8") + "=" + URLEncoder.encode(reportedUser, "UTF-8");
-
+            link = StaticComponents.dbAdress + "getMainDescription.php";
+            data += "&" + URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8");
 
             URL url = new URL(link);
             URLConnection conn = url.openConnection();
@@ -63,19 +59,13 @@ public class ReportAYardSale extends AsyncTask {
 
             return sb.toString();
         } catch (Exception e) {
+            activity.finish();//close the activity when encountering online transfer errors
             return "Please check internet connection.";
         }
     }
 
     @Override
-    protected void onPostExecute(Object result){
-        StaticComponents.unfreezeActivity(activity);//release the activity after finish processing
-        String tempResult = (String)result;
-        if(tempResult.equals("You cannot report a Yard Sale twice.") || tempResult.equals("Thank you for your report")){
-            ((TextView)((YardSalePreviewActivity) activity).findViewById(R.id.reportBtt)).setEnabled(false);
-        }
-        ((TextView)activity.findViewById(R.id.resultReport)).setText(tempResult);
-        activity.findViewById(R.id.resultReportLayout).setVisibility(View.VISIBLE);
-        activity.findViewById(R.id.space65).setVisibility(View.VISIBLE);
+    protected void onPostExecute(Object result) {
+        ((TextView)((YardSalePreviewActivity)activity).findViewById(R.id.mainDescription)).setText((String)result);
     }
 }

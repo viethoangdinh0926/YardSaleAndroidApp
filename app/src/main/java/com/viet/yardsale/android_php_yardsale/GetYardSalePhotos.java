@@ -1,4 +1,4 @@
-package com.viet.yardsale.android_php.yardsale;
+package com.viet.yardsale.android_php_yardsale;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -37,7 +37,7 @@ public class GetYardSalePhotos extends AsyncTask {
         try {
             for(int i = 0; i < Integer.valueOf(StaticComponents.number_of_yard_sale_photos); i++) {
                 images[i] = new File(activity.getCacheDir(),"image"+i+".jpg");
-                URL u = new URL(StaticComponents.dbAdress + "user/yardsale/"+StaticComponents.owner_of_yard_sale+"/"+StaticComponents.owner_of_yard_sale+i+".jpg");
+                URL u = new URL(StaticComponents.dbAdress + "user/com.viet.yardsale.com.viet.yardsale.android_php_yardsale/"+StaticComponents.owner_of_yard_sale+"/"+StaticComponents.owner_of_yard_sale+i+".jpg");
                 URLConnection conn = u.openConnection();
                 int contentLength = conn.getContentLength();
 

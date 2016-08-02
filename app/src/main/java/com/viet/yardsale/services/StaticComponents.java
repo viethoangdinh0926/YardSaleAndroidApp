@@ -55,5 +55,5 @@ public class StaticComponents {
     public static boolean showAds;
 
     //database address
-    public static String dbAdress = "http://massbaybook.hostei.com/yardsale/";
+    public static String dbAdress = "http://massbaybook.hostei.com/com.viet.yardsale.com.viet.yardsale.android_php_yardsale/";
 }

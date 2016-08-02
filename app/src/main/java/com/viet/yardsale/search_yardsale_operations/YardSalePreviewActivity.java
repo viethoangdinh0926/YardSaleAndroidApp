@@ -11,9 +11,9 @@ import android.view.View;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.viet.yardsale.R;
-import com.viet.yardsale.android_php.yardsale.GetYardSalePhotos;
-import com.viet.yardsale.android_php.yardsale.GetYardSaleMainDescription;
-import com.viet.yardsale.android_php.yardsale.ReportAYardSale;
+import com.viet.yardsale.android_php_yardsale.GetYardSalePhotos;
+import com.viet.yardsale.android_php_yardsale.GetYardSaleMainDescription;
+import com.viet.yardsale.android_php_yardsale.ReportAYardSale;
 import com.viet.yardsale.services.StaticComponents;
 
 public class YardSalePreviewActivity extends Activity {

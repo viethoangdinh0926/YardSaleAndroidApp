@@ -14,7 +14,7 @@ import android.widget.Spinner;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.viet.yardsale.R;
-import com.viet.yardsale.android_php.yardsale.PostYardSaleInformation;
+import com.viet.yardsale.android_php_yardsale.PostYardSaleInformation;
 import com.viet.yardsale.services.LocatingOperations;
 import com.viet.yardsale.services.StaticComponents;
 

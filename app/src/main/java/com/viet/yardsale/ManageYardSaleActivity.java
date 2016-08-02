@@ -9,8 +9,8 @@ import android.view.View;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.viet.yardsale.android_php.yardsale.ClearUserYardSale;
-import com.viet.yardsale.android_php.yardsale.IfUserPostYardSale;
+import com.viet.yardsale.android_php_yardsale.ClearUserYardSale;
+import com.viet.yardsale.android_php_yardsale.IfUserPostYardSale;
 import com.viet.yardsale.services.StaticComponents;
 
 

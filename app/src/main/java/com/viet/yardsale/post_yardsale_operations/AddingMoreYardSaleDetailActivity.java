@@ -23,8 +23,8 @@ import android.widget.ImageView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.viet.yardsale.R;
-import com.viet.yardsale.android_php.yardsale.AddDescriptionToYardSalePhoto;
-import com.viet.yardsale.android_php.yardsale.AddPhotoToYardSale;
+import com.viet.yardsale.android_php_yardsale.AddDescriptionToYardSalePhoto;
+import com.viet.yardsale.android_php_yardsale.AddPhotoToYardSale;
 import com.viet.yardsale.services.StaticComponents;
 
 import java.io.File;
@@ -124,7 +124,7 @@ public class AddingMoreYardSaleDetailActivity extends Activity implements Sensor
     public void onFinish(View view){
         if(!((EditText)findViewById(R.id.productDescription)).getText().toString().equals("")) {
             AddDescriptionToYardSalePhoto upd = new AddDescriptionToYardSalePhoto(this, true); // "true" mean close the activity
-            upd.execute("user/yardsale/" + StaticComponents.currentUser + "/" + StaticComponents.currentUser + StaticComponents.uploadedImageCount + ".jpg", ((EditText) findViewById(R.id.productDescription)).getText().toString());
+            upd.execute("user/com.viet.yardsale.com.viet.yardsale.android_php_yardsale/" + StaticComponents.currentUser + "/" + StaticComponents.currentUser + StaticComponents.uploadedImageCount + ".jpg", ((EditText) findViewById(R.id.productDescription)).getText().toString());
         }
         else{
             finish();
@@ -134,7 +134,7 @@ public class AddingMoreYardSaleDetailActivity extends Activity implements Sensor
     public void onNext(View view){
         if(!((EditText)findViewById(R.id.productDescription)).getText().toString().equals("")) {
             AddDescriptionToYardSalePhoto upd = new AddDescriptionToYardSalePhoto(this, false); // "false" mean taking next product picture
-            upd.execute("user/yardsale/" + StaticComponents.currentUser + "/" + StaticComponents.currentUser + StaticComponents.uploadedImageCount + ".jpg", ((EditText) findViewById(R.id.productDescription)).getText().toString());
+            upd.execute("user/com.viet.yardsale.com.viet.yardsale.android_php_yardsale/" + StaticComponents.currentUser + "/" + StaticComponents.currentUser + StaticComponents.uploadedImageCount + ".jpg", ((EditText) findViewById(R.id.productDescription)).getText().toString());
             StaticComponents.freezeActivity(this);
         }
         else {

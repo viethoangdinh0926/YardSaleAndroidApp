@@ -1,11 +1,11 @@
-package com.viet.yardsale.android_php.yardsale;
+package com.viet.yardsale.android_php_yardsale;
 
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.widget.TextView;
 
-import com.viet.yardsale.EditAccountActivity;
 import com.viet.yardsale.R;
+import com.viet.yardsale.search_yardsale_operations.YardSalePreviewActivity;
 import com.viet.yardsale.services.StaticComponents;
 
 import java.io.BufferedReader;
@@ -16,12 +16,12 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 
 /**
- * Created by Viet on 6/22/2015.
+ * Created by Viet on 6/23/2015.
  */
-public class GetCurrentUserEmail extends AsyncTask {
+public class GetPictureDescription extends AsyncTask {
     private Activity activity;
 
-    public GetCurrentUserEmail(Activity activity){
+    public GetPictureDescription(Activity activity) {
         this.activity = activity;
     }
 
@@ -33,9 +33,11 @@ public class GetCurrentUserEmail extends AsyncTask {
             String link = "";
 
             String username = (String) params[0];
+            String picture_id = (String) params[1];
 
-            link = StaticComponents.dbAdress + "getCurrentUserEmail.php";
+            link = StaticComponents.dbAdress + "getPictureDescription.php";
             data += "&" + URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8");
+            data += "&" + URLEncoder.encode("picture_id", "UTF-8") + "=" + URLEncoder.encode(picture_id, "UTF-8");
 
             URL url = new URL(link);
             URLConnection conn = url.openConnection();
@@ -57,22 +59,27 @@ public class GetCurrentUserEmail extends AsyncTask {
                 break;
             }
 
-            return sb.toString();
+            return picture_id + sb.toString();
         } catch (Exception e) {
-            //return new String("Exception: " + e.getMessage());
+            activity.finish();
             return "Please check internet connection.";
         }
     }
 
     @Override
-    protected void onPostExecute(Object result){
-        StaticComponents.unfreezeActivity(activity);//release the activity after finish processing
-        String[] temps = ((String)result).split("\\s+");
-        if(temps[0].equals("done")){
-            ((TextView)((EditAccountActivity) activity).findViewById(R.id.currentEmail)).setText(temps[1]);
-        }
-        else {
-            ((TextView)((EditAccountActivity) activity).findViewById(R.id.errMessage)).setText((String) result);
+    protected void onPostExecute(Object result) {
+        String pic_id = ((String)result).substring(0,1);
+        String result1 = ((String)result).substring(1,((String)result).length());
+        if (!(result1.equals("N/A"))) {
+            if(pic_id.equals("0")){
+                ((TextView) ((YardSalePreviewActivity) activity).findViewById(R.id.pic1Description)).setText(result1);
+            }
+            else if(pic_id.equals("1")){
+                ((TextView) ((YardSalePreviewActivity) activity).findViewById(R.id.pic2Description)).setText(result1);
+            }
+            else if(pic_id.equals("2")){
+                ((TextView) ((YardSalePreviewActivity) activity).findViewById(R.id.pic3Description)).setText(result1);
+            }
         }
     }
 }

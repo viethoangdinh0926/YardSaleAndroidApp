@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.viet.yardsale.android_php.yardsale.GenerateUserTempPassword;
+import com.viet.yardsale.android_php_yardsale.GenerateUserTempPassword;
 import com.viet.yardsale.services.StaticComponents;
 
 

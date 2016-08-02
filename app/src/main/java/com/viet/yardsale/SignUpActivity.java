@@ -8,9 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.viet.yardsale.android_php.yardsale.SignupLoginOperations;
+import com.viet.yardsale.android_php_yardsale.SignupLoginOperations;
 import com.viet.yardsale.services.StaticComponents;
 
 
